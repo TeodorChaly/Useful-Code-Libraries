@@ -1,3 +1,26 @@
+# Tasks from https://pythonist.ru/python-voprosy-sobesedovaniya-chast-i-junior/
+
+# Task is to convert string to ASCII
+# "Hello world!" -> [72, 101, 108, 108, 111, 32, 119, 111, 114, 108, 100, 33]
+
+def string_to_ascii(string):
+    string_list = []
+    for char in string:
+        string_list.append(ord(char))
+    return string_list
+
+
+# Task is to check if two tuples have same elements
+# (1, 2, 3) and (3, 2, 6) -> (2, 3)
+
+def tuple_checker(a_tuple, b_tuple):
+    same_element = []
+    for i in a_tuple:
+        if i in b_tuple:
+            same_element.append(i)
+    return same_element
+
+
 # Task is to convert from binary string to real number
 # 00000000 -> 0
 # 00000001 -> 1
@@ -18,9 +41,15 @@ def binary_converter(binary_string):
 
 
 def main():
-    print(binary_converter("00001001"))
-    print(binary_converter("11111111"))
+    pass
 
+    # print(binary_converter("00001001"))
+    # print(binary_converter("11111111"))
 
+    # a = (1, 2, 3)
+    # b = (3, 2, 6)
+    # print(tuple_checker(a, b))
+
+    # print(string_to_ascii("Hello world!"))
 if __name__ == "__main__":
     main()
