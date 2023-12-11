@@ -1,5 +1,7 @@
 # Tasks from https://pythonist.ru/python-voprosy-sobesedovaniya-chast-i-junior/
 
+# Correct answers from quizz: All except 21, 22, 28
+
 # Task is to create a list with all prime numbers from 0 to 100
 # [2, 3, 5, 7, 11, 13, 17, 19, 23, 29 ...]
 
