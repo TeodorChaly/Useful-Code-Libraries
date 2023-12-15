@@ -1,7 +1,7 @@
 import random
-
 import numpy as np
 import matplotlib.pyplot as plt
+from PIL import Image
 
 
 def scatter_show():
@@ -106,4 +106,10 @@ def animation_plot_show():
     plt.show()
 
 
-animation_plot_show()
+def image_show():
+    img = Image.open("image_coder_colored.png")
+    plt.imshow(img)
+    plt.show()
+
+
+image_show()
