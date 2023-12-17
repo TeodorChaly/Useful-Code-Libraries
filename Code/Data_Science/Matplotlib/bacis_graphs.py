@@ -3,6 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from PIL import Image
 
+# Short tutorial, how to use matplotlib
+# Plots to use: scatter, line, bar, histograms, pie, 3d, animation, image
 
 def scatter_show():
     X_data = np.random.random(100) * 100
