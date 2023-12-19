@@ -26,7 +26,8 @@ def function_two_way_compression(massive_local, k_local):
         for sub_element_id in range(len(new_massive)):
             if massive_local[element_id] + new_massive[sub_element_id] == k_local:
                 result_list_local.append(str(massive_local[element_id]) + " " + str(new_massive[sub_element_id]))
-
+            if massive_local[element_id] + new_massive[sub_element_id] > k_local:
+                break
     return result_list_local
 
 
@@ -34,7 +35,7 @@ def function_two_way_compression(massive_local, k_local):
 def function_element_finder(massive_local, k_local):
     result_list_local = []
     for element in massive_local:
-        if k_local - element in massive_local:
+        if k_local - element in massive_local and element <= 0:
             result_list_local.append(str(element) + " " + str(k_local - element))
 
     return result_list_local
@@ -47,9 +48,11 @@ k_big = 6446
 massive = [-1, 2, 5, 8]
 k_small = 7
 
-result_list_one = function_two_way_compression(massive, k_small)
-# result_list_two = function_element_finder(big_list, k_big)
-for i in result_list_one:
-    print(i)
+result_list_one = function_two_way_compression(big_list, k_big)
+result_list_two = function_element_finder(big_list, k_big)
+
+# for i in result_list_one:
+#     print(i)
+#
 # for i2 in result_list_two:
 #     print(i2)
