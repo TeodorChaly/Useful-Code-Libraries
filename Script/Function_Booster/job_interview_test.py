@@ -68,11 +68,11 @@ def function_zero_point(massive_local, k_local):
 
     if k_local > 0:
         for positive in plus_list:
-            if k_local - positive in plus_list and k_local - positive in plus_list:
+            if k_local - positive in plus_list:
                 result_list_local.append(str(positive) + " " + str(k_local - positive))
     elif k_local < 0:
         for negative in minus_list:
-            if k_local - negative in minus_list and k_local - negative in minus_list:
+            if k_local - negative in minus_list:
                 result_list_local.append(str(negative) + " " + str(k_local - negative))
 
     return result_list_local
