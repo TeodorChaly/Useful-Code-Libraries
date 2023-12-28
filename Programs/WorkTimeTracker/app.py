@@ -1,6 +1,8 @@
 import tkinter as tk
 from time import strftime, gmtime
 from notification import PopupNotification
+from tkinter import simpledialog, messagebox
+from db_reg_log import register_user, authenticate_user
 
 
 class TimerApp:
@@ -20,6 +22,29 @@ class TimerApp:
         self.running = False
         self.elapsed_time = 0
         self.time_last_break = 0
+        self.user_authenticated = False
+        self.login_or_register()
+
+    def login_or_register(self):
+        if not self.user_authenticated:
+            action = simpledialog.askstring("Login/Register", "Type 'login' or 'register':")
+            email = simpledialog.askstring("Email", "Enter your email:")
+            password = simpledialog.askstring("Password", "Enter your password:", show='*')
+
+            if action == 'register':
+                # Регистрация пользователя
+                register_user(email, password, "Loh", "Odin")  # Здесь должна быть логика для регистрации пользователя
+                messagebox.showinfo("Registration", "Registration successful!")
+            elif action == 'login':
+                # Вход пользователя
+                self.user_authenticated = authenticate_user(email,
+                                                            password)  # Здесь должна быть логика для входа пользователя
+                if self.user_authenticated:
+                    messagebox.showinfo("Login", "Login successful!")
+                else:
+                    messagebox.showerror("Login", "Login failed. Please try again.")
+            else:
+                messagebox.showerror("Error", "Invalid action. Please type 'login' or 'register'.")
 
     def start_timer(self):
         if not self.running:
